@@ -1,10 +1,8 @@
 def merge_files(file1_path, file2_path, output_path):
     with open(file1_path, 'r') as file1, open(file2_path, 'r') as file2, open(output_path, 'w') as output:
         for line1, line2 in zip(file1, file2):
-            # Removing text up to Tab character and adding Tab at the end
             line1 = line1.split('\t')[-1].strip() + '\t'
             line2 = line2.split('\t')[-1].strip()
-            # Writing the merged lines to the output file
             output.write(line1 + line2 + '\n')
 
 # Example usage
