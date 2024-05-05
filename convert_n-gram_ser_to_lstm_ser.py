@@ -4,6 +4,7 @@ def merge_files(file1_path, file2_path, output_path):
             line1 = line1.split('\t')[-1].strip() + '\t'
             line2 = line2.split('\t')[-1].strip()
             output.write(line1 + line2 + '\n')
+            
 file1_path = 'lit_test.tsv'
 file2_path = '3lit.txt'
 output_path = 'neural_like_3.txt'
