@@ -2,15 +2,15 @@ import re
 
 with open("test.tsv", "r") as file:
     text = file.read()
-    words = re.split(r' _ |[\t]|[\n]', text)
-print(words)
-# with open("output2.txt", "w") as output_file:
-#     for word in words:
-#         output_file.write(word + "\n")
+    lines = text.split('\n')
+    filtered_lines = [line for line in lines if line.count('_') == 2]
+    filtered_text = '\n'.join(filtered_lines)
+    words = re.split(r' _ |[\t]|[\n]', filtered_text)
+    print(words)
 word_amount = 0
 first_word_list = []
 second_word_list = []
-with open("PhER_to_WER.txt", "w") as output_file:
+with open("ser_to_wer.txt", "w") as output_file:
     for word in words:
         if word_amount == 0:
             first_word_list.append(word)
